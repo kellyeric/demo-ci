@@ -1,0 +1,49 @@
+name: Williams ci workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: This step describes the action for this build
+        run: |
+          echo "This is a build job step 1"
+          echo "This is a build job step 2"
+          echo "This is a build job step 3"
+          touch build.txt
+      
+      - name: This step describes the action for this build
+        run: pwd
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1 - This step describes the action for this build
+        run: |
+          echo "This is a test job step 1"
+          echo "This is a test job step 2"
+          echo "This is a test job step 3"
+          hostname
+          touch test.txt
+          
+      - name: step2 - This step describes the action for this build
+        run: pwd
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1 - This step describes the action for this build
+        run: |
+          echo "This is a deploy job step 1"
+          echo "This is a deploy job step 2"
+          echo "This is a deploy job step 3"
+          hostname
+          touch deploy.txt
+
+      - name: step2 - This step describes the action for this build
+        run: pwd
